@@ -2783,7 +2783,7 @@ namespace xBot.App
 					break;
 				case "Menu_NotifyIcon_Update":
 					if (isUpdateAvailable)
-						AutoUpdater.ShowUpdateForm();
+						AutoUpdater.ShowUpdateForm(new UpdateInfoEventArgs());
 					else if(adsWindow.isLoaded())
 						MessageBox.Show(this,"Hey, You have the most recent version!", "xBot - Updates", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					break;

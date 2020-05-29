@@ -17,3 +17,6 @@ packages/
 # Release version will be zipped apart with only required files
 xBot/bin/Release/
 xBot/obj/Release/
+/.vs/xBot/v16
+/.vs/xBot-WinForms/v16
+/.vs
