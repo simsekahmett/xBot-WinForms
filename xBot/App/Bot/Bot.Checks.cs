@@ -246,7 +246,7 @@ namespace xBot.App
 						// Remove players nears with party
 						for (byte j = 0; j < InfoManager.Party.Members.Count; j++)
 						{
-							string PlayerName = InfoManager.Party.Members.GetAt(j).Name.ToUpper();
+							string PlayerName = InfoManager.Party.Members.GetAt(j).Name.ToLower();
 							if (PlayersNearWithNoParty.ContainsKey(PlayerName)){
 								PlayersNearWithNoParty.RemoveKey(PlayerName);
 							}
@@ -350,7 +350,7 @@ namespace xBot.App
 				w.Party_lstvLeaderList.InvokeIfRequired(() => {
 					for (byte j = 0; j < InfoManager.Party.Members.Count; j++)
 					{
-						if (w.Party_lstvLeaderList.Items.ContainsKey(InfoManager.Party.Members.GetAt(j).Name.ToUpper()))
+						if (w.Party_lstvLeaderList.Items.ContainsKey(InfoManager.Party.Members.GetAt(j).Name.ToLower()))
 						{
 							found = true;
 							break;

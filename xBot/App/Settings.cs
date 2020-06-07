@@ -516,7 +516,7 @@ namespace xBot.App
 						foreach (JToken player in (JArray)Options["PartyList"])
 						{
 							ListViewItem item = new ListViewItem((string)player);
-							item.Name = item.Text.ToUpper();
+							item.Name = item.Text.ToLower();
 							w.Party_lstvPartyList.Items.Add(item);
 						}
 					}
@@ -526,7 +526,7 @@ namespace xBot.App
 						foreach (JToken leader in (JArray)Options["LeaderList"])
 						{
 							ListViewItem item = new ListViewItem((string)leader);
-							item.Name = item.Text.ToUpper();
+							item.Name = item.Text.ToLower();
 							w.Party_lstvLeaderList.Items.Add(item);
 						}
 					}

@@ -87,7 +87,7 @@ namespace xBot.PK2Extractor.PK2ReaderAPI
 							folder.Name = entry.Name;
 							folder.Position = BitConverter.ToInt64(entry.g_Position, 0);
 							folders.Add(folder);
-							m_Folders[(RootPath + entry.Name).ToUpper()] = folder;
+							m_Folders[(RootPath + entry.Name).ToLower()] = folder;
 							m_CurrentFolder.SubFolders.Add(folder);
 						}
 						break;
@@ -97,7 +97,7 @@ namespace xBot.PK2Extractor.PK2ReaderAPI
 						file.Name = entry.Name;
 						file.Size = entry.Size;
 						file.ParentFolder = m_CurrentFolder;
-						m_Files[(RootPath + entry.Name).ToUpper()] = file;
+						m_Files[(RootPath + entry.Name).ToLower()] = file;
 						m_CurrentFolder.Files.Add(file);
 						break;
 				}
@@ -149,8 +149,9 @@ namespace xBot.PK2Extractor.PK2ReaderAPI
 				return null;
 
 			// Normalize to the same dictionary key path format
-			FolderPath = FolderPath.ToUpper();
+			FolderPath = FolderPath.ToLower();
 			FolderPath = FolderPath.Replace("/", "\\");
+			FolderPath = FolderPath.Replace("ı", "i");
 			if (FolderPath.EndsWith("\\"))
 				FolderPath = FolderPath.Substring(0, FolderPath.Length - 1);
 
@@ -167,8 +168,10 @@ namespace xBot.PK2Extractor.PK2ReaderAPI
 				return null;
 
 			// Normalize to the same dictionary key path format
-			FilePath = FilePath.ToUpper();
+			FilePath = FilePath.ToLower();
 			FilePath = FilePath.Replace("/", "\\");
+			FilePath = FilePath.Replace("ı", "i");
+
 
 			Pk2File file = null;
 			m_Files.TryGetValue(FilePath, out file);

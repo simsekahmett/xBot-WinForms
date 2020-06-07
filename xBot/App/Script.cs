@@ -48,7 +48,7 @@ namespace xBot.App
 			if (line.StartsWith("//"))
 				m_lines.Add(line);
 			else
-				m_lines.Add(line.ToUpper());
+				m_lines.Add(line.ToLower());
 		}
 		public void RemoveAt(int index)
 		{

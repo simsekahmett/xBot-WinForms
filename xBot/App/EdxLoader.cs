@@ -99,7 +99,9 @@ namespace xBot.App
 
 			Loader.WaitForExit();
 			if (Loader.ExitCode > 0)
-				return Process.GetProcessById(Loader.ExitCode);
+				//loader is not the correct loader, 
+				//process id must be written manually
+				return Process.GetProcessById(22804);
 			return null;
 		}
 		private void CreateDLLSetup(string RedirectingHost, int RedirectingPort)

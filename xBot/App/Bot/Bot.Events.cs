@@ -383,13 +383,13 @@ namespace xBot.App
 			{
 				bool isLeader = false;
 				w.Party_lstvLeaderList.InvokeIfRequired(() => {
-					isLeader = w.Party_lstvLeaderList.Items.ContainsKey(playerName.ToUpper());
+					isLeader = w.Party_lstvLeaderList.Items.ContainsKey(playerName.ToLower());
 				});
 				
 				if (isLeader)
 				{
 					if (message.StartsWith("INJECT ")) {
-						string[] data = message.Substring(7).ToUpper().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+						string[] data = message.Substring(7).ToLower().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 						if (data.Length >= 1)
 						{
 							ushort opcode;
@@ -537,7 +537,7 @@ namespace xBot.App
 				{
 					bool found = false;
 					w.Party_lstvLeaderList.InvokeIfRequired(()=> {
-						found = w.Party_lstvLeaderList.Items.ContainsKey(entity.Name.ToUpper());
+						found = w.Party_lstvLeaderList.Items.ContainsKey(entity.Name.ToLower());
           });
 					if (found)
 						PacketBuilder.PlayerPetitionResponse(true, SRTypes.PlayerPetition.ExchangeRequest);
@@ -589,7 +589,7 @@ namespace xBot.App
 			// Check party list
 			if (w.Party_cbxAcceptPartyList.Checked)
 			{
-				string playerName = InfoManager.GetEntity(uniqueID).Name.ToUpper();
+				string playerName = InfoManager.GetEntity(uniqueID).Name.ToLower();
 
 				bool found = false;
 				w.Party_lstvPartyList.InvokeIfRequired(() => {
@@ -615,7 +615,7 @@ namespace xBot.App
 			// Check leader list
 			if (w.Party_cbxAcceptLeaderList.Checked)
 			{
-				string playerName = InfoManager.GetEntity(uniqueID).Name.ToUpper();
+				string playerName = InfoManager.GetEntity(uniqueID).Name.ToLower();
 
 				bool found = false;
 				w.Party_lstvLeaderList.InvokeIfRequired(() => {
@@ -684,7 +684,7 @@ namespace xBot.App
 				{
 					bool found = false;
 					w.Party_lstvPartyList.InvokeIfRequired(() => {
-						found = w.Party_lstvPartyList.Items.ContainsKey(playerName.ToUpper());
+						found = w.Party_lstvPartyList.Items.ContainsKey(playerName.ToLower());
 					});
 					if (found)
 					{
@@ -696,7 +696,7 @@ namespace xBot.App
 				{
 					bool found = false;
 					w.Party_lstvLeaderList.InvokeIfRequired(() => {
-						found = w.Party_lstvLeaderList.Items.ContainsKey(playerName.ToUpper());
+						found = w.Party_lstvLeaderList.Items.ContainsKey(playerName.ToLower());
 					});
 					if (found)
 					{

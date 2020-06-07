@@ -331,7 +331,7 @@ namespace xBot.App
 		public void SetTraceName(string PlayerName)
 		{
 			// Normalize Key
-			TracePlayerName = PlayerName.Trim().ToUpper();
+			TracePlayerName = PlayerName.Trim().ToLower();
 			if (inTrace)
 			{
 				// Check if player is around and move it

@@ -580,7 +580,7 @@ namespace xBot.Game
 				SRModel model = (SRModel)entity;
 				if (model.isPlayer())
 				{
-					m_Players[entity.Name.ToUpper()] = (SRPlayer)model;
+					m_Players[entity.Name.ToLower()] = (SRPlayer)model;
 				}
 				else if (model.isNPC())
 				{
@@ -620,7 +620,7 @@ namespace xBot.Game
 				SRModel model = (SRModel)entity;
 				if (model.isPlayer())
 				{
-					m_Players.RemoveKey(entity.Name.ToUpper());
+					m_Players.RemoveKey(entity.Name.ToLower());
 				}
 				else if (model.isNPC())
 				{

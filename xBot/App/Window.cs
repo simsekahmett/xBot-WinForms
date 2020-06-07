@@ -1923,10 +1923,10 @@ namespace xBot.App
 					if (InfoManager.inGame)
 					{
 						// Check if already exists
-						if (Party_tbxPlayer.Text != "" && !Party_lstvPartyList.Items.ContainsKey(Party_tbxPlayer.Text.ToUpper()))
+						if (Party_tbxPlayer.Text != "" && !Party_lstvPartyList.Items.ContainsKey(Party_tbxPlayer.Text.ToLower()))
 						{
 							ListViewItem player = new ListViewItem(Party_tbxPlayer.Text);
-							player.Name = player.Text.ToUpper();
+							player.Name = player.Text.ToLower();
 							Party_lstvPartyList.Items.Add(player);
 
 							Party_tbxPlayer.Text = "";
@@ -1938,10 +1938,10 @@ namespace xBot.App
 				case "Party_btnAddLeader":
 					if (InfoManager.inGame)
 					{
-						if (Party_tbxLeader.Text != "" && !Party_lstvLeaderList.Items.ContainsKey(Party_tbxLeader.Text.ToUpper()))
+						if (Party_tbxLeader.Text != "" && !Party_lstvLeaderList.Items.ContainsKey(Party_tbxLeader.Text.ToLower()))
 						{
 							ListViewItem leader = new ListViewItem(Party_tbxLeader.Text);
-							leader.Name = leader.Text.ToUpper();
+							leader.Name = leader.Text.ToLower();
 							Party_lstvLeaderList.Items.Add(leader);
 
 							Party_tbxLeader.Text = "";
